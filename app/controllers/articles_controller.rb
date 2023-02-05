@@ -39,6 +39,13 @@ class ArticlesController < ApplicationController
   end
   #editアクションでフォームを再現し編集画面(フォームとその内容)をviewに表示させ、updateアクションで再取得しパラメーターの内容をupdate(更新)する
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to root_path, status: :see_other
+  end
+
   private
 
   def article_params
