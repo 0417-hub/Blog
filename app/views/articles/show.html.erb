@@ -7,22 +7,8 @@
   <li><%= link_to "Destroy", article_path(@article), method: :delete %></li>
 </ul>
 
-
-
 <h2>Comments</h2>
-<% @article.comments.each do |comment| %>
-  <p>
-    <h2>Commenter</h2>
-    <%= comment.commenter %>
-  </p>
-
-  <p>
-    <h2>Comment:</h2>
-    <%= comment.body %>
-  </p>
-<% end %>
-
-
+<%= render @article.comments %>
 
 <h2>Add a Comment:</h2>
 <%= form_with model: [ @article, @article.comments.build ] do |f| %>
