@@ -8,4 +8,7 @@
     <h2>Comment:</h2>
     <%= comment.body %>
   </p>
+  <p>
+    <%= link_to "Destroy Comment", [comment.article, comment], mathod: :delete %>
+  </p>
 <% end %>
